@@ -168,7 +168,7 @@ const assocSampleCounts = (mongoose, model) => (list, sampleType, numField, star
   });
 };
 
-export default function(app, name) {
+export default function model (app, name) {
   const mongoose = app.get('mongoose');
   const schema = new mongoose.Schema(fields);
   schema.plugin(timestamps);
@@ -181,3 +181,5 @@ export default function(app, name) {
 
   return mongoose.model(name, schema);
 }
+
+model.schema = fields;
