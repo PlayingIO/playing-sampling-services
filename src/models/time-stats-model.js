@@ -3,8 +3,8 @@ import { plugins } from 'mostly-feathers-mongoose';
 
 // time statistics according to mongoid hash
 const fields = {
-  type: { type: 'String', required: true },      // sample type
-  daystamp: { type: 'Date' },                    // record by day
+  type: { type: String, required: true },      // sample type
+  daystamp: { type: Date },                    // record by day
   conditions: { type: 'Mixed', required: true }, // conditions of sampling
   values: { type: 'Mixed', required: true }      // values of sampling
 };

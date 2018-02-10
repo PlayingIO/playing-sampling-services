@@ -8,9 +8,9 @@ import { plugins } from 'mostly-feathers-mongoose';
 
 // time sampling records according to mongoid hash
 const fields = {
-  type: { type: 'String', required: true },   // sampling type
-  bucket: { type: 'String', required: true }, // bucket of mongoid
-  daystamp: { type: 'Date' }, // record by day, null for all days
+  type: { type: String, required: true },   // sampling type
+  bucket: { type: String, required: true }, // bucket of mongoid
+  daystamp: { type: Date }, // record by day, null for all days
   values: { type: 'Mixed', required: true } // counter for every hour
   // e.g. { <sampleId>: { total: 99, values: { 0: 99, 1: 99, ... 23: 99 } } }
 };
