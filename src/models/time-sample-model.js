@@ -3,8 +3,11 @@ import assert from 'assert';
 import fp from 'mostly-func';
 import moment from 'moment';
 import { Types } from 'mongoose';
-import timestamps from 'mongoose-timestamp';
 import { plugins } from 'mostly-feathers-mongoose';
+
+const options = {
+  timestamps: true
+};
 
 // time sampling records according to mongoid hash
 const fields = {
@@ -170,8 +173,7 @@ const assocSampleCounts = (mongoose, model) => (list, sampleType, numField, star
 
 export default function model (app, name) {
   const mongoose = app.get('mongoose');
-  const schema = new mongoose.Schema(fields);
-  schema.plugin(timestamps);
+  const schema = new mongoose.Schema(fields, options);
   schema.index({ type: 1, bucket: 1, daystamp: 1 });
 
   schema.statics.getSampleCounts = getSampleCounts(mongoose, name);
