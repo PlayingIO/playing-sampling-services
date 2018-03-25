@@ -68,7 +68,7 @@ class TimeSampleService extends Service {
   }
 }
 
-export default function init(app, options, hooks) {
+export default function init (app, options, hooks) {
   options = Object.assign({ ModelName: 'time-sample' }, options);
   return createService(app, TimeSampleService, TimeSampleModel, options);
 }

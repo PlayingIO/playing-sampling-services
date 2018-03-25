@@ -19,7 +19,7 @@ const fields = {
 };
 
 // use timestamp in mongoid as a bucket key
-const getSampleBucket = function(sampleId) {
+const getSampleBucket = function (sampleId) {
   if (!sampleId.getTimestamp) {
     sampleId = Types.ObjectId(sampleId);
   }

@@ -3,7 +3,7 @@ import { cache } from 'mostly-feathers-cache';
 
 import TimeSampleEntity from '~/entities/time-sample-entity';
 
-module.exports = function(options = {}) {
+export default function (options = {}) {
   return {
     before: {
       all: [
@@ -25,4 +25,4 @@ module.exports = function(options = {}) {
       ]
     }
   };
-};
+}
