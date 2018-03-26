@@ -20,7 +20,7 @@ export default function (options = {}) {
     after: {
       all: [
         cache(options.cache),
-        hooks.presentEntity(TimeSampleEntity, options),
+        hooks.presentEntity(TimeSampleEntity, options.entities),
         hooks.responder()
       ]
     }
