@@ -1,15 +1,15 @@
-import _ from 'lodash';
 import assert from 'assert';
 import fp from 'mostly-func';
 import moment from 'moment';
 import { Types } from 'mongoose';
-import { plugins } from 'mostly-feathers-mongoose';
 
 const options = {
   timestamps: true
 };
 
-// time sampling records according to mongoid hash
+/**
+ * Time sampling records according to mongoid hash
+ */
 const fields = {
   type: { type: String, required: true },   // sampling type
   bucket: { type: String, required: true }, // bucket of mongoid

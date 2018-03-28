@@ -1,10 +1,10 @@
-import { plugins } from 'mostly-feathers-mongoose';
-
 const options = {
   timestamps: true
 };
 
-// time statistics according to mongoid hash
+/**
+ * Time statistics according to mongoid hash
+ */
 const fields = {
   type: { type: String, required: true },      // sample type
   daystamp: { type: Date },                    // record by day
