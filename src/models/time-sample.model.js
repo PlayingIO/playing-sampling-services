@@ -1,7 +1,7 @@
 import assert from 'assert';
 import fp from 'mostly-func';
 import moment from 'moment';
-import { Types } from 'mongoose';
+import mongoose from 'mongoose';
 
 const options = {
   timestamps: true
@@ -21,7 +21,7 @@ const fields = {
 // use timestamp in mongoid as a bucket key
 const getSampleBucket = function (sampleId) {
   if (!sampleId.getTimestamp) {
-    sampleId = Types.ObjectId(sampleId);
+    sampleId = mongoose.Types.ObjectId(sampleId);
   }
   return moment(sampleId.getTimestamp()).startOf('day').toISOString();
 };

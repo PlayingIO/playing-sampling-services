@@ -3,7 +3,7 @@ import makeDebug from 'debug';
 import { Service, createService } from 'mostly-feathers-mongoose';
 import fp from 'mostly-func';
 
-import TimeSampleModel from '~/models/time-sample.model';
+import TimeSampleModel from '../../models/time-sample.model';
 import defaultHooks from './time-sample.hooks';
 
 const debug = makeDebug('playing:interaction-services:time-samples');
