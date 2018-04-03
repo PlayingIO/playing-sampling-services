@@ -140,7 +140,7 @@ const incrSampleCounts = (mongoose, model) => (sampleType, sampleIds, count) => 
     });
     bulk.execute((err, result) => {
       if (err) return reject(err);
-      return resolve(result);
+      return resolve(result.toJSON());
     });
   });
 };
