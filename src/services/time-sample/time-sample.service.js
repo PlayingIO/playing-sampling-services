@@ -6,7 +6,7 @@ import fp from 'mostly-func';
 import TimeSampleModel from '../../models/time-sample.model';
 import defaultHooks from './time-sample.hooks';
 
-const debug = makeDebug('playing:interaction-services:time-samples');
+const debug = makeDebug('playing:sampling-services:time-samples');
 
 const defaultOptions = {
   name: 'time-samples'
