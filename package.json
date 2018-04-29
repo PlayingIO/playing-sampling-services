@@ -1,6 +1,6 @@
 {
   "name": "playing-sampling-services",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Sampling and statistics microservices for playful applications",
   "author": "Forafish",
   "license": "MIT",
