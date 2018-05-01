@@ -14,7 +14,7 @@ const defaultOptions = {
 
 class TimeSampleService extends Service {
   constructor (options) {
-    options = Object.assign({}, defaultOptions, options);
+    options = fp.assign(defaultOptions, options);
     super(options);
   }
 
@@ -70,7 +70,7 @@ class TimeSampleService extends Service {
 }
 
 export default function init (app, options, hooks) {
-  options = Object.assign({ ModelName: 'time-sample' }, options);
+  options = fp.assign({ ModelName: 'time-sample' }, options);
   return createService(app, TimeSampleService, TimeSampleModel, options);
 }
 
