@@ -37,7 +37,6 @@ class TimeSampleService extends Service {
   }
 
   get (id, params) {
-    if (id === 'null' || id === '0') id = null;
     assert(id, 'id is null');
     assert(params.query.type, 'params.query.type is not provided');
 
