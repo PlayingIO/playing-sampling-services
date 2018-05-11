@@ -69,7 +69,7 @@ class TimeSampleService extends Service {
 }
 
 export default function init (app, options, hooks) {
-  options = fp.assign({ ModelName: 'time-sample' }, options);
+  options = { ModelName: 'time-sample', ...options };
   return createService(app, TimeSampleService, TimeSampleModel, options);
 }
 
