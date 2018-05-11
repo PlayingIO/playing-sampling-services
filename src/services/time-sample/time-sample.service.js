@@ -14,7 +14,7 @@ const defaultOptions = {
 
 class TimeSampleService extends Service {
   constructor (options) {
-    options = fp.assign(defaultOptions, options);
+    options = fp.assignAll(defaultOptions, options);
     super(options);
   }
 
