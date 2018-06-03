@@ -1,7 +1,7 @@
 Playing Sampling Services
 =========================
 
-Sampling and statistics management microservices for playful applications.
+Sampling and statistics management microservices for building playful applications.
 
 # Usage
 
