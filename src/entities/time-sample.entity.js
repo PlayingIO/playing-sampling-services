@@ -2,6 +2,6 @@ import Entity from 'mostly-entity';
 
 const TimeSampleEntity = new Entity('TimeSample');
 
-TimeSampleEntity.excepts('_id');
+TimeSampleEntity.discard('_id');
 
 export default TimeSampleEntity.asImmutable();
