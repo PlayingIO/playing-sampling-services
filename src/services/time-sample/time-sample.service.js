@@ -53,7 +53,7 @@ class TimeSampleService extends Service {
     const ids = fp.is(String, data.ids)
       ? fp.map(fp.trim, fp.split(',', data.ids))
       : data.ids;
-    return this.Model.incrSampleCounts(data.type, ids).then((result) => {
+    return this.Model.incrSampleCounts(data.type, ids).then(result => {
       debug('after incrSampleCounts', result.nModified, result.nUpserted);
       return { modified: result.nModified, upserted: result.nUpserted };
     });

@@ -53,7 +53,7 @@ const getSampleCounts = (mongoose, model) => (sampleType, sampleIds, startDate, 
     query.where({ daystamp: null });
   }
 
-  return query.lean().then((result) => {
+  return query.lean().then(result => {
     return fp.reduce((counters, item) => {
       if (item.type && item.values) {
         fp.reduce((counter, key) => {
@@ -84,7 +84,7 @@ const getTopCounts = (mongoose, model) => (sampleType, limit, startBucketDate, e
     query.where({ daystamp: null });
   }
 
-  return query.lean().then((result) => {
+  return query.lean().then(result => {
     let topCounters = fp.reduce((counters, item) => {
       if (item.type && item.values) {
         fp.reduce((counter, value, key) => {
@@ -155,7 +155,7 @@ const assocSampleCounts = (mongoose, model) => (list, sampleType, numField, star
     const itemsById = fp.groupBy(fp.prop('id'), list);
     if (sampleIds.length > 0) {
       TimeSample.getSampleCounts(sampleType, sampleIds, startDate, endDate)
-      .then((counters) => {
+      .then(counters => {
         //debug('assocSampleCounts', counters);
         const data = fp.map((counter, id) => {
           const item = itemsById[id];
