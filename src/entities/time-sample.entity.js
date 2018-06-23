@@ -4,4 +4,4 @@ const TimeSampleEntity = new Entity('TimeSample');
 
 TimeSampleEntity.discard('_id');
 
-export default TimeSampleEntity.asImmutable();
+export default TimeSampleEntity.freeze();

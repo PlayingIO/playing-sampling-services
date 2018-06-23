@@ -4,4 +4,4 @@ const TimeStatsEntity = new Entity('TimeStats');
 
 TimeStatsEntity.discard('_id');
 
-export default TimeStatsEntity.asImmutable();
+export default TimeStatsEntity.freeze();
