@@ -1,10 +1,10 @@
-import assert from 'assert';
-import makeDebug from 'debug';
-import { Service, createService } from 'mostly-feathers-mongoose';
-import fp from 'mostly-func';
+const assert = require('assert');
+const makeDebug = require('debug');
+const { Service, createService } = require('mostly-feathers-mongoose');
+const fp = require('mostly-func');
 
-import TimeSampleModel from '../../models/time-sample.model';
-import defaultHooks from './time-sample.hooks';
+const TimeSampleModel = require('../../models/time-sample.model');
+const defaultHooks = require('./time-sample.hooks');
 
 const debug = makeDebug('playing:sampling-services:time-samples');
 
@@ -65,9 +65,8 @@ class TimeSampleService extends Service {
   }
 }
 
-export default function init (app, options, hooks) {
+module.exports = function init (app, options, hooks) {
   options = { ModelName: 'time-sample', ...options };
   return createService(app, TimeSampleService, TimeSampleModel, options);
-}
-
-init.Service = TimeSampleService;
+};
+module.exports.Service = TimeSampleService;
