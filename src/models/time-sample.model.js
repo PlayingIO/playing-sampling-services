@@ -1,7 +1,7 @@
-import assert from 'assert';
-import fp from 'mostly-func';
-import moment from 'moment';
-import mongoose from 'mongoose';
+const assert = require('assert');
+const fp = require('mostly-func');
+const moment = require('moment');
+const mongoose = require('mongoose');
 
 const options = {
   timestamps: true
@@ -171,7 +171,7 @@ const assocSampleCounts = (mongoose, model) => (list, sampleType, numField, star
   });
 };
 
-export default function model (app, name) {
+module.exports = function model (app, name) {
   const mongoose = app.get('mongoose');
   const schema = new mongoose.Schema(fields, options);
   schema.index({ type: 1, bucket: 1, daystamp: 1 });
@@ -182,6 +182,5 @@ export default function model (app, name) {
   schema.statics.assocSampleCounts = assocSampleCounts(mongoose, name);
 
   return mongoose.model(name, schema);
-}
-
-model.schema = fields;
+};
+module.exports.schema = fields;
