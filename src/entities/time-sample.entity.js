@@ -1,7 +1,7 @@
-import Entity from 'mostly-entity';
+const Entity = require('mostly-entity');
 
 const TimeSampleEntity = new Entity('TimeSample');
 
 TimeSampleEntity.discard('_id');
 
-export default TimeSampleEntity.freeze();
+module.exports = TimeSampleEntity.freeze();
