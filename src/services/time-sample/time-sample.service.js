@@ -26,7 +26,7 @@ class TimeSampleService extends Service {
   async find (params) {
     assert(params.query.ids, 'query.ids is undefined');
     assert(params.query.type, 'query.type is not provided');
-    
+
     const ids = fp.is(String, params.query.ids)
       ? fp.map(fp.trim, fp.split(',', params.query.ids))
       : params.query.ids;
@@ -47,7 +47,7 @@ class TimeSampleService extends Service {
   async create (data, params) {
     assert(data.type, 'type is not provided');
     assert(data.ids, 'ids is not provided');
-    
+
     const ids = fp.is(String, data.ids)
       ? fp.map(fp.trim, fp.split(',', data.ids))
       : data.ids;
