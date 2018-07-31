@@ -8,7 +8,7 @@ Sampling and statistics management microservices for building playful applicatio
 ## Installation
 
 ```bash
-npm install playing-sampling-services
+npm install playing-sampling-services --save
 ```
 
 # License
